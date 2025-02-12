@@ -1,0 +1,166 @@
+@use "functions";
+
+$color-red: #EA5454;
+$color-green: #44D3D2;
+$color-orange: #FCAE4A;
+$color-blue: #549EF2;
+$color-black: #4D4F62;
+$color-grey: hsl(229, 6%, 66%);
+$color-page: #F2F2F2;
+$color-attribution: hsl(228, 45%, 44%);
+
+$space-8px: functions.to-rem(8px);
+$space-12px: functions.to-rem(12px);
+$space-16px: functions.to-rem(16px);
+$space-24px: functions.to-rem(24px);
+$space-28px: functions.to-rem(28px);
+$space-30px: functions.to-rem(30px);
+$space-32px: functions.to-rem(32px);
+$space-40px: functions.to-rem(40px);
+$space-64px: functions.to-rem(64px);
+$space-80px: functions.to-rem(80px);
+
+$radius-8px: functions.to-rem(8px);
+
+$max-card-width: functions.to-rem(350px);
+$phone-width: functions.to-rem(600px);
+
+$text-scale-factor-partial: 0.8;
+$text-scale-factor-viewport: 1vw;
+$text-scale-factor-max: 2;
+
+$text-preset-1-font-size-min: functions.to-rem(24px);
+$text-preset-1-font-size-partial: $text-preset-1-font-size-min * $text-scale-factor-partial;
+$text-preset-1-font-size-max: $text-preset-1-font-size-min * $text-scale-factor-max;
+$text-preset-1-line-height-min: functions.to-rem(36px);
+$text-preset-1-line-height-partial: $text-preset-1-line-height-min * $text-scale-factor-partial;
+$text-preset-1-line-height-max: $text-preset-1-line-height-min * $text-scale-factor-max;
+$text-preset-1-letter-spacing-min: functions.to-rem(0.17px);
+$text-preset-1-letter-spacing-partial: $text-preset-1-letter-spacing-min * $text-scale-factor-partial;
+$text-preset-1-letter-spacing-max: $text-preset-1-letter-spacing-min * $text-scale-factor-max;
+
+$text-preset-1-font-size-min-desktop: functions.to-rem(36px);
+$text-preset-1-font-size-partial-desktop: $text-preset-1-font-size-min-desktop * $text-scale-factor-partial;
+$text-preset-1-font-size-max-desktop: $text-preset-1-font-size-min-desktop * $text-scale-factor-max;
+$text-preset-1-line-height-min-desktop: functions.to-rem(54px);
+$text-preset-1-line-height-partial-desktop: $text-preset-1-line-height-min-desktop * $text-scale-factor-partial;
+$text-preset-1-line-height-max-desktop: $text-preset-1-line-height-min-desktop * $text-scale-factor-max;
+$text-preset-1-letter-spacing-min-desktop: functions.to-rem(0.25px);
+$text-preset-1-letter-spacing-partial-desktop: $text-preset-1-letter-spacing-min-desktop * $text-scale-factor-partial;
+$text-preset-1-letter-spacing-max-desktop: $text-preset-1-letter-spacing-min-desktop * $text-scale-factor-max;
+
+$text-preset-2-font-size-min: functions.to-rem(20px);
+$text-preset-2-font-size-partial: $text-preset-2-font-size-min * $text-scale-factor-partial;
+$text-preset-2-font-size-max: $text-preset-2-font-size-min * $text-scale-factor-max;
+$text-preset-2-line-height-min: functions.to-rem(30px);
+$text-preset-2-line-height-partial: $text-preset-2-line-height-min * $text-scale-factor-partial;
+$text-preset-2-line-height-max: $text-preset-2-line-height-min * $text-scale-factor-max;
+
+$text-preset-3-font-size-min: functions.to-rem(15px);
+$text-preset-3-font-size-partial: $text-preset-3-font-size-min * $text-scale-factor-partial;
+$text-preset-3-font-size-max: $text-preset-3-font-size-min * $text-scale-factor-max;
+$text-preset-3-line-height-min: functions.to-rem(25px);
+$text-preset-3-line-height-partial: $text-preset-3-line-height-min * $text-scale-factor-partial;
+$text-preset-3-line-height-max: $text-preset-3-line-height-min * $text-scale-factor-max;
+$text-preset-3-letter-spacing-min: functions.to-rem(0.1px);
+$text-preset-3-letter-spacing-partial: $text-preset-3-letter-spacing-min * $text-scale-factor-partial;
+$text-preset-3-letter-spacing-max: $text-preset-3-letter-spacing-min * $text-scale-factor-max;
+
+$text-preset-4-font-size-min: functions.to-rem(13px);
+$text-preset-4-font-size-partial: $text-preset-4-font-size-min * $text-scale-factor-partial;
+$text-preset-4-font-size-max: $text-preset-4-font-size-min * $text-scale-factor-max;
+$text-preset-4-line-height-min: functions.to-rem(23px);
+$text-preset-4-line-height-partial: $text-preset-4-line-height-min * $text-scale-factor-partial;
+$text-preset-4-line-height-max: $text-preset-4-line-height-min * $text-scale-factor-max;
+$text-preset-4-letter-spacing-min: functions.to-rem(0.09px);
+$text-preset-4-letter-spacing-partial: $text-preset-4-letter-spacing-min * $text-scale-factor-partial;
+$text-preset-4-letter-spacing-max: $text-preset-4-letter-spacing-min * $text-scale-factor-max;
+
+@mixin tablet-and-up {
+  @media (min-width: $phone-width) {
+    @content
+  }
+}
+
+@mixin text-preset-1 {
+  font-family: Poppins, sans-serif;
+  font-weight: 200;
+  font-size: clamp($text-preset-1-font-size-min,$text-preset-1-font-size-partial + $text-scale-factor-viewport, $text-preset-1-font-size-max);
+  line-height: clamp($text-preset-1-line-height-min,$text-preset-1-line-height-partial + $text-scale-factor-viewport, $text-preset-1-line-height-max);
+  letter-spacing: clamp($text-preset-1-letter-spacing-min,$text-preset-1-letter-spacing-partial + $text-scale-factor-viewport, $text-preset-1-letter-spacing-max);
+
+  @include tablet-and-up {
+    font-size: clamp($text-preset-1-font-size-min-desktop,$text-preset-1-font-size-partial-desktop + $text-scale-factor-viewport, $text-preset-1-font-size-max-desktop);
+    line-height: clamp($text-preset-1-line-height-min-desktop,$text-preset-1-line-height-partial-desktop + $text-scale-factor-viewport, $text-preset-1-line-height-max-desktop);
+    letter-spacing: clamp($text-preset-1-letter-spacing-min-desktop,$text-preset-1-letter-spacing-partial-desktop + $text-scale-factor-viewport, $text-preset-1-letter-spacing-max-desktop);
+  }
+}
+
+@mixin text-preset-1-bold {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: clamp($text-preset-1-font-size-min,$text-preset-1-font-size-partial + $text-scale-factor-viewport, $text-preset-1-font-size-max);
+  line-height: clamp($text-preset-1-line-height-min,$text-preset-1-line-height-partial + $text-scale-factor-viewport, $text-preset-1-line-height-max);
+  letter-spacing: clamp($text-preset-1-letter-spacing-min,$text-preset-1-letter-spacing-partial + $text-scale-factor-viewport, $text-preset-1-letter-spacing-max);
+
+  @include tablet-and-up {
+    font-size: clamp($text-preset-1-font-size-min-desktop,$text-preset-1-font-size-partial-desktop + $text-scale-factor-viewport, $text-preset-1-font-size-max-desktop);
+    line-height: clamp($text-preset-1-line-height-min-desktop,$text-preset-1-line-height-partial-desktop + $text-scale-factor-viewport, $text-preset-1-line-height-max-desktop);
+    letter-spacing: clamp($text-preset-1-letter-spacing-min-desktop,$text-preset-1-letter-spacing-partial-desktop + $text-scale-factor-viewport, $text-preset-1-letter-spacing-max-desktop);
+  }
+}
+
+@mixin text-preset-2 {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: clamp($text-preset-2-font-size-min,$text-preset-2-font-size-partial + $text-scale-factor-viewport, $text-preset-2-font-size-max);
+  line-height: clamp($text-preset-2-line-height-min,$text-preset-2-line-height-partial + $text-scale-factor-viewport, $text-preset-2-line-height-max);
+  letter-spacing: 0;
+}
+
+@mixin text-preset-3 {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: clamp($text-preset-3-font-size-min,$text-preset-3-font-size-partial + $text-scale-factor-viewport, $text-preset-3-font-size-max);
+  line-height: clamp($text-preset-3-line-height-min,$text-preset-3-line-height-partial + $text-scale-factor-viewport, $text-preset-3-line-height-max);
+  letter-spacing: clamp($text-preset-3-letter-spacing-min,$text-preset-3-letter-spacing-partial + $text-scale-factor-viewport, $text-preset-3-letter-spacing-max);
+}
+
+@mixin text-preset-4 {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: clamp($text-preset-4-font-size-min,$text-preset-4-font-size-partial + $text-scale-factor-viewport, $text-preset-4-font-size-max);
+  line-height: clamp($text-preset-4-line-height-min,$text-preset-4-line-height-partial + $text-scale-factor-viewport, $text-preset-4-line-height-max);
+  letter-spacing: clamp($text-preset-4-letter-spacing-min,$text-preset-4-letter-spacing-partial + $text-scale-factor-viewport, $text-preset-4-letter-spacing-max);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+#app {
+  padding: $space-80px $space-32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: $space-64px;
+}
+
+.attribution {
+  font-size: functions.to-rem(11px);
+  text-align: center;
+}
+.attribution a {
+  color: $color-attribution;
+}

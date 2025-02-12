@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+#app {
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=styles.css.map */
