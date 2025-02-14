@@ -17,11 +17,11 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 
 Desktop
 
-![Desktop](screenshots/desktop.png)
+![Desktop](ressources/screenshots/desktop.png)
 
 Mobile
 
-![Mobile](screenshots/mobile.png)
+![Mobile](ressources/screenshots/mobile.png)
 
 ### Links
 
