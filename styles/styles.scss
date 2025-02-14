@@ -23,10 +23,11 @@ $space-80px: functions.to-rem(80px);
 $radius-8px: functions.to-rem(8px);
 
 $max-card-width: functions.to-rem(350px);
+$max-header-width: functions.to-rem(540px);
 $phone-width: functions.to-rem(600px);
 
-$text-scale-factor-partial: 0.8;
-$text-scale-factor-viewport: 1vw;
+$text-scale-factor-partial: 0.5;
+$text-scale-factor-viewport: 0.5vw;
 $text-scale-factor-max: 2;
 
 $text-preset-1-font-size-min: functions.to-rem(24px);
@@ -154,10 +155,15 @@ h1, h2, p {
   padding: $space-80px $space-32px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   row-gap: $space-64px;
 }
 
 .attribution {
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
   font-size: functions.to-rem(11px);
   text-align: center;
 }
@@ -179,9 +185,10 @@ h1, h2, p {
 }
 
 .contentCard {
-  box-shadow: 5px 15px 30px -20px $color-black;
+  box-shadow: 0 12px 22px -8px rgb($color-grey, 0.8);
   border-radius: $radius-8px;
   padding: $space-28px;
+  max-width: $max-card-width;
   display: flex;
   flex-direction: column;
   row-gap: $space-32px;
@@ -219,7 +226,7 @@ h1, h2, p {
 }
 
 .contentCardHeaderText {
-  color: $color-black;
+  color: rgb($color-black, 0.4);
 
   @include text-preset-4;
 }
@@ -247,11 +254,12 @@ h1, h2, p {
   row-gap: $space-24px;
 
   @include tablet-and-up {
-    padding: $space-30px;
+    row-gap: $space-30px;
   }
 }
 
 .header {
+  max-width: $max-header-width;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -259,7 +267,8 @@ h1, h2, p {
 }
 
 .headerText {
-  color: $color-black;
+  text-align: center;
+  color: rgb($color-black, 0.4);
 
   @include text-preset-3;
 }
@@ -271,12 +280,14 @@ h1, h2, p {
 }
 
 .headerTitleWrapperTitle {
+  text-align: center;
   color: $color-black;
 
   @include text-preset-1;
 }
 
 .headerTitleWrapperSubtitle {
+  text-align: center;
   color: $color-black;
 
   @include text-preset-1-bold;

@@ -18,10 +18,15 @@ h1, h2, p {
   padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   row-gap: 4rem;
 }
 
 .attribution {
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
   font-size: 0.6875rem;
   text-align: center;
 }
@@ -45,9 +50,10 @@ h1, h2, p {
 }
 
 .contentCard {
-  box-shadow: 5px 15px 30px -20px #4D4F62;
+  box-shadow: 0 12px 22px -8px rgba(163.098, 165.0054, 173.502, 0.8);
   border-radius: 0.5rem;
   padding: 1.75rem;
+  max-width: 21.875rem;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -87,20 +93,20 @@ h1, h2, p {
 }
 
 .contentCardHeaderText {
-  color: #4D4F62;
+  color: rgba(77, 79, 98, 0.4);
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  font-size: clamp(0.8125rem, 0.65rem + 1vw, 1.625rem);
-  line-height: clamp(1.4375rem, 1.15rem + 1vw, 2.875rem);
-  letter-spacing: clamp(0.005625rem, 0.0045rem + 1vw, 0.01125rem);
+  font-size: clamp(0.8125rem, 0.40625rem + 0.5vw, 1.625rem);
+  line-height: clamp(1.4375rem, 0.71875rem + 0.5vw, 2.875rem);
+  letter-spacing: clamp(0.005625rem, 0.0028125rem + 0.5vw, 0.01125rem);
 }
 
 .contentCardHeaderTitle {
   color: #4D4F62;
   font-family: Poppins, sans-serif;
   font-weight: 600;
-  font-size: clamp(1.25rem, 1rem + 1vw, 2.5rem);
-  line-height: clamp(1.875rem, 1.5rem + 1vw, 3.75rem);
+  font-size: clamp(1.25rem, 0.625rem + 0.5vw, 2.5rem);
+  line-height: clamp(1.875rem, 0.9375rem + 0.5vw, 3.75rem);
   letter-spacing: 0;
 }
 
@@ -123,11 +129,12 @@ h1, h2, p {
 }
 @media (min-width: 37.5rem) {
   .contentCardWrapper {
-    padding: 1.875rem;
+    row-gap: 1.875rem;
   }
 }
 
 .header {
+  max-width: 33.75rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -135,12 +142,13 @@ h1, h2, p {
 }
 
 .headerText {
-  color: #4D4F62;
+  text-align: center;
+  color: rgba(77, 79, 98, 0.4);
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  font-size: clamp(0.9375rem, 0.75rem + 1vw, 1.875rem);
-  line-height: clamp(1.5625rem, 1.25rem + 1vw, 3.125rem);
-  letter-spacing: clamp(0.00625rem, 0.005rem + 1vw, 0.0125rem);
+  font-size: clamp(0.9375rem, 0.46875rem + 0.5vw, 1.875rem);
+  line-height: clamp(1.5625rem, 0.78125rem + 0.5vw, 3.125rem);
+  letter-spacing: clamp(0.00625rem, 0.003125rem + 0.5vw, 0.0125rem);
 }
 
 .headerTitleWrapper {
@@ -150,34 +158,36 @@ h1, h2, p {
 }
 
 .headerTitleWrapperTitle {
+  text-align: center;
   color: #4D4F62;
   font-family: Poppins, sans-serif;
   font-weight: 200;
-  font-size: clamp(1.5rem, 1.2rem + 1vw, 3rem);
-  line-height: clamp(2.25rem, 1.8rem + 1vw, 4.5rem);
-  letter-spacing: clamp(0.010625rem, 0.0085rem + 1vw, 0.02125rem);
+  font-size: clamp(1.5rem, 0.75rem + 0.5vw, 3rem);
+  line-height: clamp(2.25rem, 1.125rem + 0.5vw, 4.5rem);
+  letter-spacing: clamp(0.010625rem, 0.0053125rem + 0.5vw, 0.02125rem);
 }
 @media (min-width: 37.5rem) {
   .headerTitleWrapperTitle {
-    font-size: clamp(2.25rem, 1.8rem + 1vw, 4.5rem);
-    line-height: clamp(3.375rem, 2.7rem + 1vw, 6.75rem);
-    letter-spacing: clamp(0.015625rem, 0.0125rem + 1vw, 0.03125rem);
+    font-size: clamp(2.25rem, 1.125rem + 0.5vw, 4.5rem);
+    line-height: clamp(3.375rem, 1.6875rem + 0.5vw, 6.75rem);
+    letter-spacing: clamp(0.015625rem, 0.0078125rem + 0.5vw, 0.03125rem);
   }
 }
 
 .headerTitleWrapperSubtitle {
+  text-align: center;
   color: #4D4F62;
   font-family: Poppins, sans-serif;
   font-weight: 600;
-  font-size: clamp(1.5rem, 1.2rem + 1vw, 3rem);
-  line-height: clamp(2.25rem, 1.8rem + 1vw, 4.5rem);
-  letter-spacing: clamp(0.010625rem, 0.0085rem + 1vw, 0.02125rem);
+  font-size: clamp(1.5rem, 0.75rem + 0.5vw, 3rem);
+  line-height: clamp(2.25rem, 1.125rem + 0.5vw, 4.5rem);
+  letter-spacing: clamp(0.010625rem, 0.0053125rem + 0.5vw, 0.02125rem);
 }
 @media (min-width: 37.5rem) {
   .headerTitleWrapperSubtitle {
-    font-size: clamp(2.25rem, 1.8rem + 1vw, 4.5rem);
-    line-height: clamp(3.375rem, 2.7rem + 1vw, 6.75rem);
-    letter-spacing: clamp(0.015625rem, 0.0125rem + 1vw, 0.03125rem);
+    font-size: clamp(2.25rem, 1.125rem + 0.5vw, 4.5rem);
+    line-height: clamp(3.375rem, 1.6875rem + 0.5vw, 6.75rem);
+    letter-spacing: clamp(0.015625rem, 0.0078125rem + 0.5vw, 0.03125rem);
   }
 }
 
